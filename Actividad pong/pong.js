@@ -1,3 +1,10 @@
+let key_map = {
+    w: false,
+    s: false,
+    ArrowDown: false,
+    ArrowUp: false
+}
+
 class barra // Class for both sticks
 {
     constructor(x, y, width, height, speed=1)
@@ -25,12 +32,23 @@ class barra // Class for both sticks
         context.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    update(key, down) // Sticks can move up and down 
+    // update(key, down) // Sticks can move up and down 
+    // {
+    //     if((key == "ArrowDown" || key == "s") && this.y < (down - this.height))
+    //         this.y += 5
+    //     if((key == "ArrowUp" || key == "w") && this.y > 0)
+    //         this.y -= 5
+        
+    // }
+
+    update(move, height) // Sticks can move up and down 
     {
-        if((key == "ArrowDown" || key == "s") && this.y < (down - this.height))
+        if(move == "down" && this.y < (height - this.height))
             this.y += 5
-        if((key == "ArrowUp" || key == "w") && this.y > 0)
-            this.y -= 5
+
+        if(move == "up" && this.y > 0)
+                this.y -= 5
+        
     }
 }
 
@@ -216,15 +234,37 @@ function updateBall(canvas, context, barras, bola) //Draw animations and movemen
                 barras[1].x, barras[1].y);
 }
 
-function updateSticks(key, canvas, context, barra){ //Animate left and right sticks
+// function updateSticks(key, canvas, context, barra){ //Animate left and right sticks
+
+//     context.clearRect(0,0, canvas.width, canvas.height);
+
+//     // barras.forEach(barra => {
+//         barra.draw(context);
+//         barra.update(key, canvas.height);
+
+//     // }) 
+
+// }
+
+function updateSticks(canvas, context, barras){ //Animate left and right sticks
 
     context.clearRect(0,0, canvas.width, canvas.height);
 
-    // barras.forEach(barra => {
+    barras.forEach((barra, index) => {
         barra.draw(context);
-        barra.update(key, canvas.height);
-
-    // }) 
+        if(index === 0){
+            if(key_map["ArrowUp"])
+                barra.update("up", canvas.height);
+            else if(key_map["ArrowDown"])
+                barra.update("down", canvas.height);
+        }
+        else if(index === 1){
+            if(key_map["w"])
+                barra.update("up", canvas.height);
+            else if(key_map["s"])
+                barra.update("down", canvas.height);
+            }
+    }) 
 
 }
 
@@ -249,11 +289,32 @@ function main()
 
     document.addEventListener('keydown', (e) => { //Move sticks with up and down arrows
         const key = e.key;
-        if(key == "ArrowDown" || key == "ArrowUp"){ // Move Left stick
-            updateSticks(key, canvas, context, barras[0]);
-        } else if (key == "w" || key == "s") { // Move Right stick
-            updateSticks(key, canvas, context, barras[1]);
-        }
+        
+        if(key == "ArrowDown" || key == "ArrowUp" || key == "w" || key == "s"){
+            key_map[key] = true;
+
+        }    
+
+        console.log(key, key_map[key]);
+
+        updateSticks(canvas, context, barras);
+
+        // if(key == "ArrowDown" || key == "ArrowUp"){ // Move Left stick
+        //     updateSticks(key, canvas, context, barras[0]);
+        // } 
+        
+        // if (key == "w" || key == "s") { // Move Right stick
+        //     updateSticks(key, canvas, context, barras[1]);
+        // }
     });
+
+    document.addEventListener('keyup', (e) => {
+        const key = e.key;
+
+        if(key == "ArrowDown" || key == "ArrowUp" || key == "w" || key == "s")
+            key_map[key] = false;
+
+        console.log(key, key_map[key]);
+    })
 
 }
