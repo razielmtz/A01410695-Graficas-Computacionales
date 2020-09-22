@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Three.js Scene Graph</title>
+
+<link rel="stylesheet" href="../libs/jquery-ui/jquery-ui.css" />
+<link rel="stylesheet" href="../css/main.css" />
+<link rel="stylesheet" href="../css/jerarquia.css" />
+
+<script src="../libs/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+<script src="../libs/jquery-ui/jquery-ui.js"></script>
+<script src="../libs/three.js/three.js"></script>
+
+<script src="threejsscene.js"></script>
+
+<script type="text/javascript">
+       
+	$(document).ready(
+			function() {
+
+				$("#slider").slider({min: 0.1, max: 2, value: 1, step: 0.01, animate: false});
+								
+				let canvas = document.getElementById("webglcanvas");
+
+				// create the scene
+				createScene(canvas);
+				
+		        // Run the run loop
+		        run();
+			}
+	);
+
+</script>
+
+</head>
+<body>
+
+	<div id="container">
+	    <canvas id="webglcanvas" width=800 height=600></canvas>
+		<div id="title">
+			Three.js Scene Graph/Transform Hierarchy
+		</div>
+	</div>
+	<div id="buttons">
+		<button type="button" onClick="addPlanet();">Add Element</button>
+		<button type="button" onClick="addSatellite();">Add Satellite</button>
+		<button type="button" onClick="resetScene();">Reset</button>
+	</div>
+	<div id="slider"></div>
+</body>
+
+</html>
