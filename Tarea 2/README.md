@@ -21,12 +21,21 @@ Los astros que fueron creados son:<br/>
 - 8 planetas y Plutón (Cada uno de diferente tamaño), Saturno y Urano con un anillo el cual simula varios con una textura cada uno.
 - Las lunas de cada planeta (si es que tienen), la cantidad de lunas no fue la misma a las reales en todos los planetas pero se colocaron de manera que hiciera sentido. Estas lunas se generar en un radio aleatorio alrededor de su planeta respectivo.
 - 400 asteroides (los astros más pequeños en ete ejercicio), que se crean en un radio aleatorio alrededor del Sol y distancia aleatoria dentro de la órbita correspondiente.<br />
+#### Geometries
 ![](../CapturasPantalla/Tarea2/Tarea2_Gometries.png)
+#### Add Sun, Planets
 ![](../CapturasPantalla/Tarea2/Tarea2_AddCelestialBodies.png)
+![](../CapturasPantalla/Tarea2/Tarea2_AddCelestialBodies2.png)
+#### Add Moons
+![](../CapturasPantalla/Tarea2/Tarea2_AddMoons.png)
+#### Add Asteoid Belt
+![](../CapturasPantalla/Tarea2/Tarea2_AddAsteroidBelt.png)
 
 ### Texturas de astros
 A cada planeta, sol, lunas, asteroides y órbitas se les colocó una textura.  A 2 planetas se les colocó un normal map y a 5 un bump map ya que estos fueron los únicos encontrados en Internet. 
-Las texturas y maps fueron obtenidos de las siguientes referencias: https://www.solarsystemscope.com/textures/ y http://planetpixelemporium.com/earth.html.
+Las texturas y maps fueron obtenidos de las siguientes referencias: https://www.solarsystemscope.com/textures/ y http://planetpixelemporium.com/earth.html.<br />
+
+![](../CapturasPantalla/Tarea2/Tarea2_Materials.png)
 
 ### Traslaciones y rotaciones
 Funcionan de esta manera; los planetas giran alrededor del Sol y sus lunas giran alrededor de su planeta. Los asteroides giran en su orbita alrededor del Sol. El Sol, los planetas y las lunas giran sobre su propio eje 
@@ -34,8 +43,14 @@ que en este caso es z. Para lograr la traslación de los planetas se colocó un 
 de esta manera cada uno va a su propia velocidad y no giran todos al mismo tiempo. De manera similar se aplicó el mismo concepto a las lunas poniendo el pivote en su planeta para que giren independientemene del planeta. Para los asteroides se hizo un procedimiento similar a los planetas, cada uno con su pivote en la posición del Sol y una velocidad a aleatoria entre 1 y 3. 
 Los planetas y las lunas giran sobre su propio eje z de manera independiente a los demás astros.
 
+![](../CapturasPantalla/Tarea2/Tarea2_TranslationsAndRotations.png)
+
 ### Orbitas
 Para colocar las orbitas fui colocando anillos, su grosor es igual pero la distancia entre cada uno varía un poco, teniendo como centro la ubicación del Sol fui ajustando los tamaños y distancias para que no chocaran los planetas y sus luna con otros astros.
 
+![](../CapturasPantalla/Tarea2/Tarea2_AddOrbits.png)
+
 ### Orbit controller
 Se agregó un orbit controller para poder ver el sistema solar de mejor manera y poder girar toda la escena con el mouse.
+
+![](../CapturasPantalla/Tarea2/Tarea2_OrbitController.png)
