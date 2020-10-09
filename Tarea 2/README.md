@@ -13,15 +13,14 @@ Utilizando WebGL dibuja lo siguiente:
 ## Desarrollo
 
 ### Creación de astros
-Para la creación de los astros utilicé geometrías de esferas ajustando el tamaño. No hice los tamaños a escala pero los acomodé de manera que los tamaño tuvieran sentido, por ejemplo, que se viera la diferencia
-entre los planetas más grandes y los chicos, que las lunas estuvieran más chicas que los planetas pero más grandes que los asteroides, etc. La creación de todos los astros se hace al cargar la página. A la vez que se crean los astros también les coloqué un materail
-y pivotes pero eso será explicado más adelante en este README.<br/>
+Para la creación de los astros utilicé geometrías de esferas ajustando el tamaño. No hice los tamaños a escala pero los acomodé de manera que los tamaños tuvieran sentido, por ejemplo, que se viera la diferencia
+entre los planetas más grandes y los chicos, que las lunas estuvieran más chicas que los planetas pero más grandes que los asteroides, etc. La creación de todos los astros se hace al cargar la página. A la vez que se crean los astros también les coloqué un materialy pivotes pero eso será explicado más adelante en este README.<br/>
 <br/>
 Los astros que fueron creados son:<br/>
-- Sol (el astro más grande)
-- 8 planetas y Plutón (Cada uno de diferente tamaño), Saturno y Urano con un anillo el cual simular varios con una textura cada uno
-- Las lunas de cada planeta (si es que tienen), la cantidad de lunas no fue la misma a las reales en todos los planetas pero se colocaron de manera que hiciera sentido
-- 400 asteroides (los astros más pequeños en ete ejercicio)
+- Sol (el astro más grande).
+- 8 planetas y Plutón (Cada uno de diferente tamaño), Saturno y Urano con un anillo el cual simula varios con una textura cada uno.
+- Las lunas de cada planeta (si es que tienen), la cantidad de lunas no fue la misma a las reales en todos los planetas pero se colocaron de manera que hiciera sentido. Estas lunas se generar en un radio aleatorio alrededor de su planeta respectivo.
+- 400 asteroides (los astros más pequeños en ete ejercicio), que se crean en un radio aleatorio alrededor del Sol y distancia aleatoria dentro de la órbita correspondiente.
 
 ### Texturas de astros
 A cada planeta, sol, lunas, asteroides y órbitas se les colocó una textura.  A 2 planetas se les colocó un normal map y a 5 un bump map ya que estos fueron los únicos encontrados en Internet. 
