@@ -21,6 +21,7 @@ Los astros que fueron creados son:<br/>
 - 8 planetas y Plutón (Cada uno de diferente tamaño), Saturno y Urano con un anillo el cual simula varios con una textura cada uno.
 - Las lunas de cada planeta (si es que tienen), la cantidad de lunas no fue la misma a las reales en todos los planetas pero se colocaron de manera que hiciera sentido. Estas lunas se generar en un radio aleatorio alrededor de su planeta respectivo.
 - 400 asteroides (los astros más pequeños en ete ejercicio), que se crean en un radio aleatorio alrededor del Sol y distancia aleatoria dentro de la órbita correspondiente.
+![](CapturasPantalla/Tarea2/Tarea2_Gometries.png)
 
 ### Texturas de astros
 A cada planeta, sol, lunas, asteroides y órbitas se les colocó una textura.  A 2 planetas se les colocó un normal map y a 5 un bump map ya que estos fueron los únicos encontrados en Internet. 
