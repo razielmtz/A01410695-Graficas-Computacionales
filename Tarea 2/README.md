@@ -22,7 +22,7 @@ Los astros que fueron creados son:<br/>
 - Las lunas de cada planeta (si es que tienen), la cantidad de lunas no fue la misma a las reales en todos los planetas pero se colocaron de manera que hiciera sentido. Estas lunas se generar en un radio aleatorio alrededor de su planeta respectivo.
 - 400 asteroides (los astros más pequeños en ete ejercicio), que se crean en un radio aleatorio alrededor del Sol y distancia aleatoria dentro de la órbita correspondiente.<br />
 #### Geometries
-![](../CapturasPantalla/Tarea2/Tarea2_Gometries.png)
+![](../CapturasPantalla/Tarea2/Tarea2_Gometries.png width="100")
 #### Add Sun, Planets
 ![](../CapturasPantalla/Tarea2/Tarea2_AddCelestialBodies.png)
 ![](../CapturasPantalla/Tarea2/Tarea2_AddCelestialBodies2.png)
