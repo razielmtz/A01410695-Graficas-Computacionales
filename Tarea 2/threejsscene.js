@@ -68,6 +68,8 @@ function animate()
 
     let decreasePlanetSpeed = angle;
 
+    //TRANSLATIONS AND ROTATIONS
+
     // Add rotation to planets around the sun
     celestialBodiesPivotList.forEach(pivot => {
         pivot.rotation.z += decreasePlanetSpeed;
@@ -155,7 +157,7 @@ function createScene(canvas)
 
 }
 
-function addCelestialBodies() {
+function addCelestialBodies() { //Add Sun and planets, Call function to add moons and Asteroid Belt
 
     // Select a random planet geometry
     let geometry = sun;
@@ -253,6 +255,7 @@ function addMoons(quantity, planetPosition, planetSourcePivot, planetSize){
         let geometry = satellite;
         let newSatellite = new THREE.Mesh(geometry, moonMaterial);
 
+        //Random place around the planets depending on the size
         let angle = Math.random()*Math.PI*2;
         if(planetSize === 'small'){
             randomx = Math.cos(angle)*0.08;
@@ -270,7 +273,7 @@ function addMoons(quantity, planetPosition, planetSourcePivot, planetSize){
         let satellitePivotPoint = new THREE.Object3D();
         satellitePivotPoint.position.set(planetPosition, 0, 0);
 
-        pivotSpeed = (Math.random() * 0.25) + 0.1;
+        pivotSpeed = (Math.random() * 0.25) + 0.1; //Random speed for each pivot of each moon
 
         satellitePivot = {pivotPoint: satellitePivotPoint, speed: pivotSpeed};
 
@@ -292,6 +295,7 @@ function addAsteroidBelt() {
 
         let angle = Math.random()*Math.PI*2;
   
+        //Random place of the corresponding orbit around the Sun
         randomx = Math.cos(angle)*((Math.random() * 0.25) + 1.45);
         randomy = Math.sin(angle)*((Math.random() * 0.25) + 1.45);
         randomz = (Math.random() * 1.15) + 1.25
@@ -327,6 +331,7 @@ function addOrbits(){
         
         scene.add( newElement );
         
+        //Distance adjustment to avoid collisions
         if(i == 0){
             orbitRadius += .25;
         } else if (i == 1 || i == 2){
